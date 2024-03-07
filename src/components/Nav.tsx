@@ -7,7 +7,7 @@ import {
 	Portal,
 	Stack,
 	Text,
-	Title
+	Title,
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 function Nav() {
@@ -17,21 +17,20 @@ function Nav() {
 			<Portal>
 				<Drawer onClose={close} opened={opened}></Drawer>
 			</Portal>
-			<nav className="h-20 py-2 bg-red-500 w-full flex align-middle justify-center px-4 ">
+			<nav className="h-20 z-10 py-2  w-full flex align-middle justify-center px-4 fixed left-0 top-0 ">
 				<Flex
 					justify={"center"}
-					w={{ base: "100%", lg: "90%" }}
-					className="bg-blue-200 p-1 rounded-md"
+					className=" p-1.5 px-4 rounded-md bg-neutral-800 lg:container w-full"
 				>
 					<Flex gap={"lg"} mr={"auto"}>
-						<Image src={"ava.png"} h={"100%"} className="rounded-full"></Image>
-						<Stack gap={0} bg={"green"}>
-							<Title order={3}>Hey there</Title>
+						<Image src={"ava.png"} h={"100%"} className="rounded-full "></Image>
+						<Stack gap={0}>
+							<Title order={3} component={"a"}>Illumi</Title>
 							<Text>Web developer</Text>
 						</Stack>
 					</Flex>
 					<Flex></Flex>
-					<Center className=" md:hidden">
+					<Center className=" md:hidden ">
 						<Burger opened={opened} onClick={open}></Burger>
 					</Center>
 				</Flex>
